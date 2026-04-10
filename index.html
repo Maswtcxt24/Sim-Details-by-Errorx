@@ -10,18 +10,18 @@ body{
 background:#000;
 font-family:monospace;
 color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
 margin:0;
+padding:20px;
 }
 
+/* Main Box */
 .main-box{
 border:2px solid red;
 padding:20px;
 width:90%;
 max-width:400px;
+margin:auto;
+margin-top:40px;
 text-align:center;
 box-shadow:0 0 25px red;
 animation:fade 1s ease;
@@ -44,6 +44,7 @@ font-size:12px;
 margin-bottom:10px;
 }
 
+/* Input */
 input{
 width:100%;
 padding:12px;
@@ -54,6 +55,7 @@ margin-bottom:10px;
 outline:none;
 }
 
+/* Buttons */
 .btn{
 width:100%;
 padding:12px;
@@ -78,6 +80,7 @@ background:#00c853;
 color:#000;
 }
 
+/* Loader */
 .loader{
 display:none;
 margin-top:15px;
@@ -97,11 +100,24 @@ margin:auto;
 100%{transform:rotate(360deg);}
 }
 
+/* Result scroll fix */
 .result{
 margin-top:15px;
 text-align:left;
+max-height:300px;
+overflow-y:auto;
+padding-right:5px;
 }
 
+/* Scrollbar */
+.result::-webkit-scrollbar{
+width:5px;
+}
+.result::-webkit-scrollbar-thumb{
+background:red;
+}
+
+/* Result item */
 .item{
 border:1px solid red;
 padding:10px;
@@ -119,6 +135,7 @@ font-size:14px;
 font-weight:bold;
 }
 
+/* Footer */
 .footer{
 margin-top:10px;
 font-size:11px;
@@ -128,6 +145,11 @@ color:#888;
 @keyframes fade{
 from{opacity:0;transform:translateY(10px);}
 to{opacity:1;}
+}
+
+/* Smooth scroll */
+html{
+scroll-behavior:smooth;
 }
 </style>
 </head>
@@ -209,7 +231,7 @@ document.getElementById("result").innerHTML="❌ No Data Found";
 document.getElementById("loader").style.display="none";
 }
 
-// Music function
+// Music
 function playMusic(){
 let audio=new Audio("https://files.catbox.moe/9f5c0z.mp3");
 audio.play();
