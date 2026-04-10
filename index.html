@@ -14,7 +14,6 @@ margin:0;
 padding:20px;
 }
 
-/* Main Box */
 .main-box{
 border:2px solid red;
 padding:20px;
@@ -24,27 +23,12 @@ margin:auto;
 margin-top:40px;
 text-align:center;
 box-shadow:0 0 25px red;
-animation:fade 1s ease;
 }
 
-.title{
-color:red;
-letter-spacing:4px;
-font-size:28px;
-}
+.title{color:red;font-size:28px;letter-spacing:4px;}
+.subtitle{color:#aaa;}
+.credit{color:#ff4444;font-size:12px;margin-bottom:10px;}
 
-.subtitle{
-color:#aaa;
-margin-bottom:5px;
-}
-
-.credit{
-color:#ff4444;
-font-size:12px;
-margin-bottom:10px;
-}
-
-/* Input */
 input{
 width:100%;
 padding:12px;
@@ -52,39 +36,21 @@ background:#111;
 border:1px solid red;
 color:#fff;
 margin-bottom:10px;
-outline:none;
 }
 
-/* Buttons */
 .btn{
 width:100%;
 padding:12px;
 margin-top:10px;
 border:none;
-cursor:pointer;
 font-weight:bold;
-transition:0.2s;
+cursor:pointer;
 }
 
-.btn:active{
-transform:scale(0.95);
-}
+.red{background:red;color:#000;}
+.green{background:#00c853;color:#000;}
 
-.red{
-background:red;
-color:#000;
-}
-
-.green{
-background:#00c853;
-color:#000;
-}
-
-/* Loader */
-.loader{
-display:none;
-margin-top:15px;
-}
+.loader{display:none;margin-top:15px;}
 
 .spinner{
 border:3px solid #333;
@@ -96,61 +62,25 @@ animation:spin 1s linear infinite;
 margin:auto;
 }
 
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
+@keyframes spin{100%{transform:rotate(360deg);}}
 
-/* Result scroll fix */
 .result{
 margin-top:15px;
 text-align:left;
 max-height:300px;
 overflow-y:auto;
-padding-right:5px;
 }
 
-/* Scrollbar */
-.result::-webkit-scrollbar{
-width:5px;
-}
-.result::-webkit-scrollbar-thumb{
-background:red;
-}
-
-/* Result item */
 .item{
 border:1px solid red;
 padding:10px;
 margin-bottom:10px;
-animation:fade 0.5s ease;
 }
 
-.label{
-font-size:12px;
-color:#aaa;
-}
+.label{font-size:12px;color:#aaa;}
+.value{font-weight:bold;}
 
-.value{
-font-size:14px;
-font-weight:bold;
-}
-
-/* Footer */
-.footer{
-margin-top:10px;
-font-size:11px;
-color:#888;
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(10px);}
-to{opacity:1;}
-}
-
-/* Smooth scroll */
-html{
-scroll-behavior:smooth;
-}
+.footer{font-size:11px;color:#888;margin-top:10px;}
 </style>
 </head>
 
@@ -165,11 +95,16 @@ scroll-behavior:smooth;
 <input type="text" id="input" placeholder="Enter Phone / CNIC">
 
 <button class="btn red" onclick="search()">⚡ EXECUTE SYSTEM</button>
-<button class="btn red" onclick="playMusic()">🎵 PLAY MUSIC</button>
+<button class="btn red" onclick="toggleMusic()">🎵 PLAY / PAUSE MUSIC</button>
 
 <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">
 <button class="btn green">🔥 JOIN ERRORX CHANNEL</button>
 </a>
+
+<!-- 🎵 AUDIO TAG -->
+<audio id="bgm" loop>
+  <source src="suzume.mp3" type="audio/mpeg">
+</audio>
 
 <div class="loader" id="loader">
 <div class="spinner"></div>
@@ -178,7 +113,7 @@ scroll-behavior:smooth;
 
 <div id="result" class="result"></div>
 
-<p class="footer">© 2026 Abdullah Suleman | ERRORX Project</p>
+<p class="footer">© 2026 Abdullah Suleman</p>
 
 </div>
 
@@ -186,11 +121,12 @@ scroll-behavior:smooth;
 
 const API="https://famofc.site/api/database.php";
 
+// Search Function
 async function search(){
 let val=document.getElementById("input").value.trim();
 
 if(!val){
-alert("Enter Phone or CNIC");
+alert("Enter value");
 return;
 }
 
@@ -231,10 +167,16 @@ document.getElementById("result").innerHTML="❌ No Data Found";
 document.getElementById("loader").style.display="none";
 }
 
-// Music
-<audio id="bgm" loop>
-  <source src="suzume.mp3" type="audio/mpeg">
-</audio>
+// 🎵 Play / Pause Function
+function toggleMusic(){
+let audio=document.getElementById("bgm");
+
+if(audio.paused){
+audio.play();
+}else{
+audio.pause();
+}
+}
 
 </script>
 
