@@ -3,173 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro Checker</title>
+<title>ERRORX - SIM OWNER DETAILS</title>
 
 <style>
-:root{
---bg:#0d1117;
---card:#161b22;
---gold:#f4c430;
---gold-dark:#d4a017;
---text:#e6edf3;
---muted:#8b949e;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-font-family:Segoe UI,Roboto;
-background:var(--bg);
-color:var(--text);
+background:#000;
+font-family:monospace;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
 }
 
-/* Header */
-.header{
-background:linear-gradient(135deg,#f4c430,#d4a017);
-padding:25px 15px;
-border-bottom-left-radius:20px;
-border-bottom-right-radius:20px;
+.main-box{
+border:2px solid red;
+padding:20px;
+width:90%;
+max-width:400px;
 text-align:center;
-color:#fff;
+box-shadow:0 0 25px red;
 animation:fade 1s ease;
 }
 
-.bismillah{
-font-size:20px;
-font-weight:600;
-margin-bottom:8px;
+.title{
+color:red;
+letter-spacing:4px;
+font-size:28px;
 }
 
-.welcome{
-font-size:14px;
-opacity:0.9;
+.subtitle{
+color:#aaa;
+margin-bottom:5px;
 }
 
-/* Container */
-.container{
-max-width:480px;
-margin:auto;
-padding:15px;
-}
-
-/* Card */
-.card{
-background:var(--card);
-border-radius:16px;
-padding:15px;
-margin-top:-20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.5);
-animation:fade 0.6s ease;
-}
-
-/* Toggle */
-.toggle{
-display:flex;
-background:#0d1117;
-border-radius:10px;
-padding:4px;
-margin-bottom:15px;
-}
-
-.toggle button{
-flex:1;
-padding:10px;
-border:none;
-background:none;
-color:var(--muted);
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.toggle button.active{
-background:var(--gold);
-color:#000;
-}
-
-/* Input */
-.input-box{
-display:flex;
-gap:10px;
+.credit{
+color:#ff4444;
+font-size:12px;
+margin-bottom:10px;
 }
 
 input{
-flex:1;
+width:100%;
 padding:12px;
-border:none;
-border-radius:10px;
-background:#0d1117;
+background:#111;
+border:1px solid red;
 color:#fff;
+margin-bottom:10px;
+outline:none;
 }
 
-/* Button New Style */
 .btn{
-background:linear-gradient(145deg,#f4c430,#d4a017);
-color:#000;
+width:100%;
+padding:12px;
+margin-top:10px;
 border:none;
-padding:12px 18px;
-border-radius:12px;
-font-weight:700;
 cursor:pointer;
-box-shadow:0 4px 0 #b8960c;
+font-weight:bold;
 transition:0.2s;
 }
 
 .btn:active{
-transform:translateY(3px);
-box-shadow:0 1px 0 #b8960c;
+transform:scale(0.95);
 }
 
-/* Loader */
+.red{
+background:red;
+color:#000;
+}
+
+.green{
+background:#00c853;
+color:#000;
+}
+
 .loader{
 display:none;
-text-align:center;
-padding:20px;
+margin-top:15px;
 }
 
 .spinner{
+border:3px solid #333;
+border-top:3px solid red;
+border-radius:50%;
 width:30px;
 height:30px;
-border:3px solid #333;
-border-top:3px solid var(--gold);
-border-radius:50%;
 animation:spin 1s linear infinite;
 margin:auto;
 }
 
 @keyframes spin{
-to{transform:rotate(360deg);}
+100%{transform:rotate(360deg);}
 }
 
-/* Result */
 .result{
 margin-top:15px;
+text-align:left;
 }
 
 .item{
-background:#0d1117;
-padding:12px;
-border-radius:10px;
+border:1px solid red;
+padding:10px;
 margin-bottom:10px;
-animation:fade 0.4s ease;
+animation:fade 0.5s ease;
 }
 
 .label{
 font-size:12px;
-color:var(--muted);
+color:#aaa;
 }
 
 .value{
 font-size:14px;
-font-weight:600;
+font-weight:bold;
 }
 
-/* Credit */
-.credit{
-text-align:center;
-margin-top:15px;
+.footer{
+margin-top:10px;
 font-size:11px;
-color:var(--muted);
+color:#888;
 }
 
 @keyframes fade{
@@ -181,47 +134,43 @@ to{opacity:1;}
 
 <body>
 
-<div class="header">
-<div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
-<div class="welcome">Welcome! Fast & Secure Database Checker</div>
-</div>
+<div class="main-box">
 
-<div class="container">
-<div class="card">
+<h1 class="title">ERRORX</h1>
+<p class="subtitle">SIM OWNER DETAILS</p>
+<p class="credit">By ⏤͟͟͞ 𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓</p>
 
-<div class="toggle">
-<button class="active" onclick="setType('phone',this)">Phone</button>
-<button onclick="setType('cnic',this)">CNIC</button>
-</div>
+<input type="text" id="input" placeholder="Enter Phone / CNIC">
 
-<div class="input-box">
-<input type="text" id="input" placeholder="Enter number...">
-<button class="btn" onclick="search()">Search</button>
-</div>
+<button class="btn red" onclick="search()">⚡ EXECUTE SYSTEM</button>
+<button class="btn red" onclick="playMusic()">🎵 PLAY MUSIC</button>
+
+<a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">
+<button class="btn green">🔥 JOIN ERRORX CHANNEL</button>
+</a>
 
 <div class="loader" id="loader">
 <div class="spinner"></div>
-<p>Searching...</p>
+<p>Scanning Database...</p>
 </div>
 
 <div id="result" class="result"></div>
 
-<div class="credit">Developed By: Kamran Ismail</div>
+<p class="footer">© 2026 Abdullah Suleman | ERRORX Project</p>
 
-</div>
 </div>
 
 <script>
-const API="https://famofc.site/api/database.php";
 
-function setType(t,el){
-document.querySelectorAll(".toggle button").forEach(b=>b.classList.remove("active"));
-el.classList.add("active");
-}
+const API="https://famofc.site/api/database.php";
 
 async function search(){
 let val=document.getElementById("input").value.trim();
-if(!val) return alert("Enter value");
+
+if(!val){
+alert("Enter Phone or CNIC");
+return;
+}
 
 document.getElementById("loader").style.display="block";
 document.getElementById("result").innerHTML="";
@@ -259,7 +208,14 @@ document.getElementById("result").innerHTML="❌ No Data Found";
 
 document.getElementById("loader").style.display="none";
 }
+
+// Music function
+function playMusic(){
+let audio=new Audio("https://files.catbox.moe/9f5c0z.mp3");
+audio.play();
+}
+
 </script>
 
 </body>
-  </html>
+</html>
