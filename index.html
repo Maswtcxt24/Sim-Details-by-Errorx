@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Checker</title>
+
+<style>
+:root{
+--bg:#0d1117;
+--card:#161b22;
+--gold:#f4c430;
+--gold-dark:#d4a017;
+--text:#e6edf3;
+--muted:#8b949e;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Segoe UI,Roboto;
+background:var(--bg);
+color:var(--text);
+}
+
+/* Header */
+.header{
+background:linear-gradient(135deg,#f4c430,#d4a017);
+padding:25px 15px;
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
+text-align:center;
+color:#fff;
+animation:fade 1s ease;
+}
+
+.bismillah{
+font-size:20px;
+font-weight:600;
+margin-bottom:8px;
+}
+
+.welcome{
+font-size:14px;
+opacity:0.9;
+}
+
+/* Container */
+.container{
+max-width:480px;
+margin:auto;
+padding:15px;
+}
+
+/* Card */
+.card{
+background:var(--card);
+border-radius:16px;
+padding:15px;
+margin-top:-20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+animation:fade 0.6s ease;
+}
+
+/* Toggle */
+.toggle{
+display:flex;
+background:#0d1117;
+border-radius:10px;
+padding:4px;
+margin-bottom:15px;
+}
+
+.toggle button{
+flex:1;
+padding:10px;
+border:none;
+background:none;
+color:var(--muted);
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.toggle button.active{
+background:var(--gold);
+color:#000;
+}
+
+/* Input */
+.input-box{
+display:flex;
+gap:10px;
+}
+
+input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#0d1117;
+color:#fff;
+}
+
+/* Button New Style */
+.btn{
+background:linear-gradient(145deg,#f4c430,#d4a017);
+color:#000;
+border:none;
+padding:12px 18px;
+border-radius:12px;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 4px 0 #b8960c;
+transition:0.2s;
+}
+
+.btn:active{
+transform:translateY(3px);
+box-shadow:0 1px 0 #b8960c;
+}
+
+/* Loader */
+.loader{
+display:none;
+text-align:center;
+padding:20px;
+}
+
+.spinner{
+width:30px;
+height:30px;
+border:3px solid #333;
+border-top:3px solid var(--gold);
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin:auto;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+/* Result */
+.result{
+margin-top:15px;
+}
+
+.item{
+background:#0d1117;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+animation:fade 0.4s ease;
+}
+
+.label{
+font-size:12px;
+color:var(--muted);
+}
+
+.value{
+font-size:14px;
+font-weight:600;
+}
+
+/* Credit */
+.credit{
+text-align:center;
+margin-top:15px;
+font-size:11px;
+color:var(--muted);
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+<div class="welcome">Welcome! Fast & Secure Database Checker</div>
+</div>
+
+<div class="container">
+<div class="card">
+
+<div class="toggle">
+<button class="active" onclick="setType('phone',this)">Phone</button>
+<button onclick="setType('cnic',this)">CNIC</button>
+</div>
+
+<div class="input-box">
+<input type="text" id="input" placeholder="Enter number...">
+<button class="btn" onclick="search()">Search</button>
+</div>
+
+<div class="loader" id="loader">
+<div class="spinner"></div>
+<p>Searching...</p>
+</div>
+
+<div id="result" class="result"></div>
+
+<div class="credit">Developed By: Kamran Ismail</div>
+
+</div>
+</div>
+
+<script>
+const API="https://famofc.site/api/database.php";
+
+function setType(t,el){
+document.querySelectorAll(".toggle button").forEach(b=>b.classList.remove("active"));
+el.classList.add("active");
+}
+
+async function search(){
+let val=document.getElementById("input").value.trim();
+if(!val) return alert("Enter value");
+
+document.getElementById("loader").style.display="block";
+document.getElementById("result").innerHTML="";
+
+try{
+let res=await fetch(`${API}?q=${encodeURIComponent(val)}`);
+let data=await res.json();
+
+if(!data.success) throw new Error();
+
+let html="";
+data.data.records.forEach(r=>{
+html+=`
+<div class="item">
+<div class="label">Name</div>
+<div class="value">${r.full_name||"N/A"}</div>
+
+<div class="label">Phone</div>
+<div class="value">${r.phone||"N/A"}</div>
+
+<div class="label">CNIC</div>
+<div class="value">${r.cnic||"N/A"}</div>
+
+<div class="label">Address</div>
+<div class="value">${r.address||"N/A"}</div>
+</div>
+`;
+});
+
+document.getElementById("result").innerHTML=html;
+
+}catch{
+document.getElementById("result").innerHTML="❌ No Data Found";
+}
+
+document.getElementById("loader").style.display="none";
+}
+</script>
+
+</body>
+  </html>
