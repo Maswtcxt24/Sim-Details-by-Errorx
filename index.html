@@ -171,7 +171,7 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
   <div class="price-badge">Rs. 200 / Month</div>
 
   <p style="color:#fff;font-size:13px;margin-top:12px;">Send Payment to JazzCash:</p>
-  <div class="jazzcash-num">0346-3084191</div>
+  <div class="jazzcash-num">03XX-XXXXXXX</div>
 
   <div class="info-box">
     ✅ Send payment to the JazzCash number above<br>
@@ -218,7 +218,7 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
   <button class="btn orange" onclick="logout()" style="margin-top:8px;font-size:12px;">🔓 Logout / Switch Account</button>
 
-  <audio id="bgm" loop>
+  <audio id="bgm" loop autoplay>
     <source src="suzume.mp3" type="audio/mpeg">
   </audio>
 
@@ -339,11 +339,18 @@ async function search(){
   document.getElementById("loader").style.display = "none";
 }
 
-// ---- Music ----
+// ---- Music Autoplay ----
 function toggleMusic(){
   let audio = document.getElementById("bgm");
   audio.paused ? audio.play() : audio.pause();
 }
+
+// Autoplay on page load (fallback for strict browsers)
+document.addEventListener("click", function startAudio(){
+  let audio = document.getElementById("bgm");
+  if(audio.paused) audio.play();
+  document.removeEventListener("click", startAudio);
+}, {once: true});
 </script>
 </body>
 </html>
