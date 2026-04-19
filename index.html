@@ -1,91 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ERRORX - SIM OWNER DETAILS</title>
-
-<!-- ✅ ADSENSE (FIXED POSITION - NOT INSIDE CSS) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4818644205700800"
-crossorigin="anonymous"></script>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-
-body{
-  background:#000;
-  font-family:monospace;
-  color:#fff;
-  padding:20px;
-  min-height:100vh;
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>ERRORX - SIM OWNER DETAILS</title>  
+<style>  
+*{box-sizing:border-box;margin:0;padding:0;}  body{
+background:#000;
+font-family:monospace;
+color:#fff;
+padding:20px;
+min-height:100vh;
 }
 
 /* Glitch animation for title */
 @keyframes glitch{
-  0%{text-shadow:2px 0 red,-2px 0 cyan;}
-  25%{text-shadow:-2px 0 red,2px 0 cyan;}
-  50%{text-shadow:2px 2px red,-2px -2px cyan;}
-  75%{text-shadow:-2px 2px red,2px -2px cyan;}
-  100%{text-shadow:2px 0 red,-2px 0 cyan;}
+0%{text-shadow:2px 0 red,-2px 0 cyan;}
+25%{text-shadow:-2px 0 red,2px 0 cyan;}
+50%{text-shadow:2px 2px red,-2px -2px cyan;}
+75%{text-shadow:-2px 2px red,2px -2px cyan;}
+100%{text-shadow:2px 0 red,-2px 0 cyan;}
 }
 
 @keyframes spin{100%{transform:rotate(360deg);}}
 
 @keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 @keyframes borderPulse{
-  0%,100%{box-shadow:0 0 15px red;}
-  50%{box-shadow:0 0 35px red,0 0 60px rgba(255,0,0,0.3);}
+0%,100%{box-shadow:0 0 15px red;}
+50%{box-shadow:0 0 35px red,0 0 60px rgba(255,0,0,0.3);}
 }
 
 .main-box{
-  border:2px solid red;
-  padding:20px;
-  width:90%;
-  max-width:420px;
-  margin:auto;
-  margin-top:40px;
-  text-align:center;
-  animation:borderPulse 2s infinite, fadeIn 0.5s ease;
+border:2px solid red;
+padding:20px;
+width:90%;
+max-width:420px;
+margin:auto;
+margin-top:40px;
+text-align:center;
+animation:borderPulse 2s infinite, fadeIn 0.5s ease;
 }
 
 .title{
-  color:red;
-  font-size:28px;
-  letter-spacing:4px;
-  animation:glitch 3s infinite;
+color:red;
+font-size:28px;
+letter-spacing:4px;
+animation:glitch 3s infinite;
 }
 
 .subtitle{color:#aaa;margin:5px 0;}
 .credit{color:#ff4444;font-size:12px;margin-bottom:10px;}
 
 input{
-  width:100%;
-  padding:12px;
-  background:#111;
-  border:1px solid red;
-  color:#fff;
-  margin-bottom:10px;
-  outline:none;
-  font-family:monospace;
+width:100%;
+padding:12px;
+background:#111;
+border:1px solid red;
+color:#fff;
+margin-bottom:10px;
+outline:none;
+font-family:monospace;
 }
 
 input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
 .btn{
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-  font-family:monospace;
-  font-size:14px;
-  letter-spacing:1px;
-  transition:transform 0.1s, opacity 0.2s;
+width:100%;
+padding:12px;
+margin-top:8px;
+border:none;
+font-weight:bold;
+cursor:pointer;
+font-family:monospace;
+font-size:14px;
+letter-spacing:1px;
+transition:transform 0.1s, opacity 0.2s;
 }
 
 .btn:active{transform:scale(0.97);}
@@ -98,12 +90,12 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
 .loader{display:none;margin-top:15px;}
 .spinner{
-  border:3px solid #333;
-  border-top:3px solid red;
-  border-radius:50%;
-  width:30px;height:30px;
-  animation:spin 1s linear infinite;
-  margin:auto;
+border:3px solid #333;
+border-top:3px solid red;
+border-radius:50%;
+width:30px;height:30px;
+animation:spin 1s linear infinite;
+margin:auto;
 }
 
 .result{margin-top:15px;text-align:left;max-height:300px;overflow-y:auto;}
@@ -115,42 +107,42 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
 /* Paywall specific */
 .jazzcash-num{
-  font-size:22px;
-  color:#00c853;
-  letter-spacing:2px;
-  border:1px dashed #00c853;
-  padding:10px;
-  margin:12px 0;
-  animation:borderPulse 2s infinite;
-  filter: drop-shadow(0 0 6px #00c853);
+font-size:22px;
+color:#00c853;
+letter-spacing:2px;
+border:1px dashed #00c853;
+padding:10px;
+margin:12px 0;
+animation:borderPulse 2s infinite;
+filter: drop-shadow(0 0 6px #00c853);
 }
 
 .price-badge{
-  display:inline-block;
-  background:red;
-  color:#000;
-  font-size:18px;
-  font-weight:bold;
-  padding:6px 18px;
-  margin:8px 0;
-  letter-spacing:2px;
+display:inline-block;
+background:red;
+color:#000;
+font-size:18px;
+font-weight:bold;
+padding:6px 18px;
+margin:8px 0;
+letter-spacing:2px;
 }
 
 .divider{
-  border:none;
-  border-top:1px solid #333;
-  margin:12px 0;
+border:none;
+border-top:1px solid #333;
+margin:12px 0;
 }
 
 .info-box{
-  background:#111;
-  border:1px solid #333;
-  padding:10px;
-  font-size:12px;
-  color:#aaa;
-  text-align:left;
-  margin:10px 0;
-  line-height:1.8;
+background:#111;
+border:1px solid #333;
+padding:10px;
+font-size:12px;
+color:#aaa;
+text-align:left;
+margin:10px 0;
+line-height:1.8;
 }
 
 .err-msg{color:red;font-size:13px;margin-top:8px;}
@@ -159,118 +151,160 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 .lock-icon{font-size:40px;margin:10px 0;}
 </style>
 
-</head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4818644205700800"  
+     crossorigin="anonymous"></script>  </head>  
+<body>  <!-- ========== PAYWALL ========== -->  <div id="paywall" class="main-box">  
+  <h1 class="title">ERRORX</h1>  
+  <p class="subtitle">SIM OWNER DETAILS</p>  
+  <p class="credit">By ⏤͟͟͞ 𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓</p>    <div class="lock-icon">🔒</div>  
+  <p style="color:#ff4444;font-size:15px;font-weight:bold;">PREMIUM ACCESS REQUIRED</p>    <hr class="divider">    <p style="color:#aaa;font-size:13px;">1 Month Full Access</p>  
+  <div class="price-badge">Rs. 200 / Month</div>    <p style="color:#fff;font-size:13px;margin-top:12px;">Send Payment to JazzCash:</p>  
+  <div class="jazzcash-num">03463084191</div>    <div class="info-box">  
+    ✅ Send payment to the JazzCash number above<br>  
+    ✅ Send payment screenshot on WhatsApp<br>  
+    ✅ You will receive an unlock code<br>  
+    ✅ Access is valid for 1 month  
+  </div>    <a href="https://wa.me/923162715379?text=Hello%2C%20I%20want%20ERRORX%20access.%20Payment%20proof%20attached." target="_blank">  
+    <button class="btn orange">📲 SEND PAYMENT PROOF (WhatsApp)</button>  
+  </a>    <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">  
+    <button class="btn green" style="margin-top:8px;">🔥 JOIN ERRORX CHANNEL</button>  
+  </a>    <hr class="divider">    <p style="color:#aaa;font-size:13px;margin-bottom:6px;">Enter Your Unlock Code:</p>  
+  <input type="text" id="unlockInput" placeholder="🔑 Enter Unlock Code">  
+  <button class="btn red" onclick="checkCode()">⚡ UNLOCK ACCESS</button>    <p id="unlockMsg" class="err-msg"></p>    <p class="footer">© 2026 Made by Abdullah Suleman (𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓)</p>  
+</div>  <!-- ========== MAIN TOOL ========== -->  <div id="mainTool" class="main-box" style="display:none;">    <h1 class="title">ERRORX</h1>  
+  <p class="subtitle">SIM OWNER DETAILS</p>  
+  <p class="credit">By ⏤͟͟͞ 𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓</p>  
+  <p style="color:#00c853;font-size:12px;">✅ ACCESS ACTIVE — <span id="expiryDisplay"></span></p>    <input type="text" id="searchInput" placeholder="Enter Phone / CNIC">  <button class="btn red" onclick="search()">⚡ EXECUTE SYSTEM</button>
+<button class="btn red" onclick="toggleMusic()" style="margin-top:8px;">🎵 PLAY / PAUSE MUSIC</button>
 
-<body>
+  <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">  
+    <button class="btn green">🔥 JOIN ERRORX CHANNEL</button>  
+  </a>  <button class="btn orange" onclick="logout()" style="margin-top:8px;font-size:12px;">🔓 Logout / Switch Account</button>
 
-<!-- ========== PAYWALL ========== -->
-<div id="paywall" class="main-box">
-  <h1 class="title">ERRORX</h1>
-  <p class="subtitle">SIM OWNER DETAILS</p>
-  <p class="credit">By ⏤͟͟͞ 𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓</p>
-
-  <div class="lock-icon">🔒</div>
-  <p style="color:#ff4444;font-size:15px;font-weight:bold;">PREMIUM ACCESS REQUIRED</p>
-
-  <hr class="divider">
-
-  <p style="color:#aaa;font-size:13px;">1 Month Full Access</p>
-  <div class="price-badge">Rs. 200 / Month</div>
-
-  <p style="color:#fff;font-size:13px;margin-top:12px;">Send Payment to JazzCash:</p>
-  <div class="jazzcash-num">03463084191</div>
-
-  <div class="info-box">
-    ✅ Send payment to JazzCash<br>
-    ✅ Send screenshot on WhatsApp<br>
-    ✅ Receive unlock code<br>
-    ✅ Valid for 1 month
-  </div>
-
-  <a href="https://wa.me/923162715379?text=Hello%2C%20I%20want%20ERRORX%20access." target="_blank">
-    <button class="btn orange">📲 SEND PAYMENT PROOF</button>
-  </a>
-
-  <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">
-    <button class="btn green">🔥 JOIN CHANNEL</button>
-  </a>
-
-  <hr class="divider">
-
-  <input type="text" id="unlockInput" placeholder="Enter Unlock Code">
-  <button class="btn red" onclick="checkCode()">UNLOCK</button>
-
-  <p id="unlockMsg" class="err-msg"></p>
-</div>
-
-<!-- ========== MAIN TOOL ========== -->
-<div id="mainTool" class="main-box" style="display:none;">
-
-  <h1 class="title">ERRORX</h1>
-  <p class="subtitle">SIM OWNER DETAILS</p>
-
-  <input type="text" id="searchInput" placeholder="Enter Phone / CNIC">
-  <button class="btn red" onclick="search()">EXECUTE</button>
-
-  <div class="loader" id="loader">
-    <div class="spinner"></div>
-  </div>
-
-  <div id="result" class="result"></div>
-
-</div>
-
-<script>
-
-const VALID_CODES = {
-  "ERRORX2026": Date.now() + (30*24*60*60*1000)
-};
-
-const API = "https://famofc.site/api/database.php";
-
-function checkCode(){
-  let code = document.getElementById("unlockInput").value.trim().toUpperCase();
-  let msg = document.getElementById("unlockMsg");
-
-  if(VALID_CODES[code]){
-    localStorage.setItem("errorx_session", JSON.stringify({code,expiry:VALID_CODES[code]}));
-    document.getElementById("paywall").style.display="none";
-    document.getElementById("mainTool").style.display="block";
-  } else {
-    msg.textContent="Invalid Code";
-  }
-}
-
-async function search(){
-  let val = document.getElementById("searchInput").value;
-  if(!val) return;
-
-  document.getElementById("loader").style.display="block";
-
-  try{
-    let res = await fetch(`${API}?q=${encodeURIComponent(val)}`);
-    let data = await res.json();
-
-    let html = "";
-    data.data.records.forEach(r=>{
-      html += `<div class="item">
-        <div class="value">${r.full_name||""}</div>
-        <div class="value">${r.phone||""}</div>
-        <div class="value">${r.cnic||""}</div>
-        <div class="value">${r.address||""}</div>
-      </div>`;
-    });
-
-    document.getElementById("result").innerHTML = html;
-
-  } catch(e){
-    document.getElementById("result").innerHTML="Error";
-  }
-
-  document.getElementById("loader").style.display="none";
-}
-
-</script>
-
-</body>
+  <audio id="bgm" loop autoplay>  
+    <source src="suzume.mp3" type="audio/mpeg">  
+  </audio>    <div class="loader" id="loader">  
+    <div class="spinner"></div>  
+    <p>Scanning Database...</p>  
+  </div>    <div id="result" class="result"></div>    <p class="footer">© 2026 Made by Abdullah Suleman (𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓)</p>  
+</div>  <script>  
+// ============================================  
+// ADMIN: Add or remove codes here  
+// Format: "CODE": expiry_timestamp (milliseconds)  
+// Use Date.now() + (30 * 24 * 60 * 60 * 1000) for 30 days  
+// ============================================  
+const VALID_CODES = {  
+  "ERRORX2026": Date.now() + (30*24*60*60*1000),  // Default code  
+  "MRT001": Date.now() + (30*24*60*60*1000),  
+  "VIP2026": Date.now() + (30*24*60*60*1000),  
+  // Add new customer codes below:  
+  // "NEWCODE": Date.now() + (30*24*60*60*1000),  
+};  
+  
+const API = "https://famofc.site/api/database.php";  
+  
+// ---- Startup Check ----  
+window.onload = function(){  
+  let saved = JSON.parse(localStorage.getItem("errorx_session") || "null");  
+  if(saved && saved.expiry > Date.now()){  
+    unlockTool(saved.expiry);  
+  } else {  
+    localStorage.removeItem("errorx_session");  
+    document.getElementById("paywall").style.display = "block";  
+    document.getElementById("mainTool").style.display = "none";  
+  }  
+};  
+  
+// ---- Code Check ----  
+function checkCode(){  
+  let code = document.getElementById("unlockInput").value.trim().toUpperCase();  
+  let msgEl = document.getElementById("unlockMsg");  
+  
+  if(!code){  
+    msgEl.textContent = "❌ Please enter your unlock code!";  
+    msgEl.className = "err-msg";  
+    return;  
+  }  
+  
+  if(VALID_CODES[code] && VALID_CODES[code] > Date.now()){  
+    let expiry = VALID_CODES[code];  
+    localStorage.setItem("errorx_session", JSON.stringify({code, expiry}));  
+    msgEl.textContent = "✅ Access Unlocked!";  
+    msgEl.className = "success-msg";  
+    setTimeout(() => unlockTool(expiry), 800);  
+  } else {  
+    msgEl.textContent = "❌ Invalid or Expired Code! Contact admin on WhatsApp.";  
+    msgEl.className = "err-msg";  
+  }  
+}  
+  
+// Allow Enter key on unlock input  
+document.getElementById("unlockInput").addEventListener("keypress", function(e){  
+  if(e.key === "Enter") checkCode();  
+});  
+  
+// ---- Show Tool ----  
+function unlockTool(expiry){  
+  document.getElementById("paywall").style.display = "none";  
+  document.getElementById("mainTool").style.display = "block";  
+  
+  let date = new Date(expiry);  
+  let formatted = date.toLocaleDateString("en-PK", {day:"2-digit",month:"short",year:"numeric"});  
+  document.getElementById("expiryDisplay").textContent = "Valid till: " + formatted;  
+}  
+  
+// ---- Logout ----  
+function logout(){  
+  localStorage.removeItem("errorx_session");  
+  location.reload();  
+}  
+  
+// ---- Search ----  
+async function search(){  
+  let val = document.getElementById("searchInput").value.trim();  
+  if(!val){ alert("Enter value"); return; }  
+  
+  document.getElementById("loader").style.display = "block";  
+  document.getElementById("result").innerHTML = "";  
+  
+  try{  
+    let res = await fetch(`${API}?q=${encodeURIComponent(val)}`);  
+    let data = await res.json();  
+    if(!data.success) throw new Error();  
+  
+    let html = "";  
+    data.data.records.forEach(r => {  
+      html += `  
+      <div class="item">  
+        <div class="label">Name</div>  
+        <div class="value">${r.full_name||"N/A"}</div>  
+        <div class="label">Phone</div>  
+        <div class="value">${r.phone||"N/A"}</div>  
+        <div class="label">CNIC</div>  
+        <div class="value">${r.cnic||"N/A"}</div>  
+        <div class="label">Address</div>  
+        <div class="value">${r.address||"N/A"}</div>  
+      </div>`;  
+    });  
+    document.getElementById("result").innerHTML = html;  
+  } catch {  
+    document.getElementById("result").innerHTML = "❌ No Data Found";  
+  }  
+  
+  document.getElementById("loader").style.display = "none";  
+}  
+  
+// ---- Music Autoplay ----  
+function toggleMusic(){  
+  let audio = document.getElementById("bgm");  
+  audio.paused ? audio.play() : audio.pause();  
+}  
+  
+// Autoplay on page load (fallback for strict browsers)  
+document.addEventListener("click", function startAudio(){  
+  let audio = document.getElementById("bgm");  
+  if(audio.paused) audio.play();  
+  document.removeEventListener("click", startAudio);  
+}, {once: true});  
+</script>  </body>  
 </html>
