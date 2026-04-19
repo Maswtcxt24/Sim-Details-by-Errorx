@@ -4,22 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ERRORX - SIM OWNER DETAILS</title>
+
+<!-- ✅ ADSENSE (FIXED POSITION - NOT INSIDE CSS) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4818644205700800"
+crossorigin="anonymous"></script>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 
 body{
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4818644205700800"
-     crossorigin="anonymous"></script>
-<!-- 300*250 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4818644205700800"
-     data-ad-slot="3571179578"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
   background:#000;
   font-family:monospace;
   color:#fff;
@@ -165,9 +158,9 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
 .lock-icon{font-size:40px;margin:10px 0;}
 </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4818644205700800"
-     crossorigin="anonymous"></script>
+
 </head>
+
 <body>
 
 <!-- ========== PAYWALL ========== -->
@@ -188,29 +181,26 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
   <div class="jazzcash-num">03463084191</div>
 
   <div class="info-box">
-    ✅ Send payment to the JazzCash number above<br>
-    ✅ Send payment screenshot on WhatsApp<br>
-    ✅ You will receive an unlock code<br>
-    ✅ Access is valid for 1 month
+    ✅ Send payment to JazzCash<br>
+    ✅ Send screenshot on WhatsApp<br>
+    ✅ Receive unlock code<br>
+    ✅ Valid for 1 month
   </div>
 
-  <a href="https://wa.me/923162715379?text=Hello%2C%20I%20want%20ERRORX%20access.%20Payment%20proof%20attached." target="_blank">
-    <button class="btn orange">📲 SEND PAYMENT PROOF (WhatsApp)</button>
+  <a href="https://wa.me/923162715379?text=Hello%2C%20I%20want%20ERRORX%20access." target="_blank">
+    <button class="btn orange">📲 SEND PAYMENT PROOF</button>
   </a>
 
   <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">
-    <button class="btn green" style="margin-top:8px;">🔥 JOIN ERRORX CHANNEL</button>
+    <button class="btn green">🔥 JOIN CHANNEL</button>
   </a>
 
   <hr class="divider">
 
-  <p style="color:#aaa;font-size:13px;margin-bottom:6px;">Enter Your Unlock Code:</p>
-  <input type="text" id="unlockInput" placeholder="🔑 Enter Unlock Code">
-  <button class="btn red" onclick="checkCode()">⚡ UNLOCK ACCESS</button>
+  <input type="text" id="unlockInput" placeholder="Enter Unlock Code">
+  <button class="btn red" onclick="checkCode()">UNLOCK</button>
 
   <p id="unlockMsg" class="err-msg"></p>
-
-  <p class="footer">© 2026 Made by Abdullah Suleman (𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓)</p>
 </div>
 
 <!-- ========== MAIN TOOL ========== -->
@@ -218,153 +208,69 @@ input:focus{border-color:#ff6666;box-shadow:0 0 8px rgba(255,0,0,0.4);}
 
   <h1 class="title">ERRORX</h1>
   <p class="subtitle">SIM OWNER DETAILS</p>
-  <p class="credit">By ⏤͟͟͞ 𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓</p>
-  <p style="color:#00c853;font-size:12px;">✅ ACCESS ACTIVE — <span id="expiryDisplay"></span></p>
 
   <input type="text" id="searchInput" placeholder="Enter Phone / CNIC">
-
-  <button class="btn red" onclick="search()">⚡ EXECUTE SYSTEM</button>
-  <button class="btn red" onclick="toggleMusic()" style="margin-top:8px;">🎵 PLAY / PAUSE MUSIC</button>
-
-  <a href="https://whatsapp.com/channel/0029Vb5isALI1rcah6CRXm3J" target="_blank">
-    <button class="btn green">🔥 JOIN ERRORX CHANNEL</button>
-  </a>
-
-  <button class="btn orange" onclick="logout()" style="margin-top:8px;font-size:12px;">🔓 Logout / Switch Account</button>
-
-  <audio id="bgm" loop autoplay>
-    <source src="suzume.mp3" type="audio/mpeg">
-  </audio>
+  <button class="btn red" onclick="search()">EXECUTE</button>
 
   <div class="loader" id="loader">
     <div class="spinner"></div>
-    <p>Scanning Database...</p>
   </div>
 
   <div id="result" class="result"></div>
 
-  <p class="footer">© 2026 Made by Abdullah Suleman (𓆩𝐌𝐑 𝐓𝐖𝐈𝐋𝐈𝐆𝐇𝐓)</p>
 </div>
 
 <script>
-// ============================================
-// ADMIN: Add or remove codes here
-// Format: "CODE": expiry_timestamp (milliseconds)
-// Use Date.now() + (30 * 24 * 60 * 60 * 1000) for 30 days
-// ============================================
+
 const VALID_CODES = {
-  "ERRORX2026": Date.now() + (30*24*60*60*1000),  // Default code
-  "MRT001": Date.now() + (30*24*60*60*1000),
-  "VIP2026": Date.now() + (30*24*60*60*1000),
-  // Add new customer codes below:
-  // "NEWCODE": Date.now() + (30*24*60*60*1000),
+  "ERRORX2026": Date.now() + (30*24*60*60*1000)
 };
 
 const API = "https://famofc.site/api/database.php";
 
-// ---- Startup Check ----
-window.onload = function(){
-  let saved = JSON.parse(localStorage.getItem("errorx_session") || "null");
-  if(saved && saved.expiry > Date.now()){
-    unlockTool(saved.expiry);
-  } else {
-    localStorage.removeItem("errorx_session");
-    document.getElementById("paywall").style.display = "block";
-    document.getElementById("mainTool").style.display = "none";
-  }
-};
-
-// ---- Code Check ----
 function checkCode(){
   let code = document.getElementById("unlockInput").value.trim().toUpperCase();
-  let msgEl = document.getElementById("unlockMsg");
+  let msg = document.getElementById("unlockMsg");
 
-  if(!code){
-    msgEl.textContent = "❌ Please enter your unlock code!";
-    msgEl.className = "err-msg";
-    return;
-  }
-
-  if(VALID_CODES[code] && VALID_CODES[code] > Date.now()){
-    let expiry = VALID_CODES[code];
-    localStorage.setItem("errorx_session", JSON.stringify({code, expiry}));
-    msgEl.textContent = "✅ Access Unlocked!";
-    msgEl.className = "success-msg";
-    setTimeout(() => unlockTool(expiry), 800);
+  if(VALID_CODES[code]){
+    localStorage.setItem("errorx_session", JSON.stringify({code,expiry:VALID_CODES[code]}));
+    document.getElementById("paywall").style.display="none";
+    document.getElementById("mainTool").style.display="block";
   } else {
-    msgEl.textContent = "❌ Invalid or Expired Code! Contact admin on WhatsApp.";
-    msgEl.className = "err-msg";
+    msg.textContent="Invalid Code";
   }
 }
 
-// Allow Enter key on unlock input
-document.getElementById("unlockInput").addEventListener("keypress", function(e){
-  if(e.key === "Enter") checkCode();
-});
-
-// ---- Show Tool ----
-function unlockTool(expiry){
-  document.getElementById("paywall").style.display = "none";
-  document.getElementById("mainTool").style.display = "block";
-
-  let date = new Date(expiry);
-  let formatted = date.toLocaleDateString("en-PK", {day:"2-digit",month:"short",year:"numeric"});
-  document.getElementById("expiryDisplay").textContent = "Valid till: " + formatted;
-}
-
-// ---- Logout ----
-function logout(){
-  localStorage.removeItem("errorx_session");
-  location.reload();
-}
-
-// ---- Search ----
 async function search(){
-  let val = document.getElementById("searchInput").value.trim();
-  if(!val){ alert("Enter value"); return; }
+  let val = document.getElementById("searchInput").value;
+  if(!val) return;
 
-  document.getElementById("loader").style.display = "block";
-  document.getElementById("result").innerHTML = "";
+  document.getElementById("loader").style.display="block";
 
   try{
     let res = await fetch(`${API}?q=${encodeURIComponent(val)}`);
     let data = await res.json();
-    if(!data.success) throw new Error();
 
     let html = "";
-    data.data.records.forEach(r => {
-      html += `
-      <div class="item">
-        <div class="label">Name</div>
-        <div class="value">${r.full_name||"N/A"}</div>
-        <div class="label">Phone</div>
-        <div class="value">${r.phone||"N/A"}</div>
-        <div class="label">CNIC</div>
-        <div class="value">${r.cnic||"N/A"}</div>
-        <div class="label">Address</div>
-        <div class="value">${r.address||"N/A"}</div>
+    data.data.records.forEach(r=>{
+      html += `<div class="item">
+        <div class="value">${r.full_name||""}</div>
+        <div class="value">${r.phone||""}</div>
+        <div class="value">${r.cnic||""}</div>
+        <div class="value">${r.address||""}</div>
       </div>`;
     });
+
     document.getElementById("result").innerHTML = html;
-  } catch {
-    document.getElementById("result").innerHTML = "❌ No Data Found";
+
+  } catch(e){
+    document.getElementById("result").innerHTML="Error";
   }
 
-  document.getElementById("loader").style.display = "none";
+  document.getElementById("loader").style.display="none";
 }
 
-// ---- Music Autoplay ----
-function toggleMusic(){
-  let audio = document.getElementById("bgm");
-  audio.paused ? audio.play() : audio.pause();
-}
-
-// Autoplay on page load (fallback for strict browsers)
-document.addEventListener("click", function startAudio(){
-  let audio = document.getElementById("bgm");
-  if(audio.paused) audio.play();
-  document.removeEventListener("click", startAudio);
-}, {once: true});
 </script>
+
 </body>
 </html>
