@@ -1,0 +1,14 @@
+{
+  "name": "sim-details-by-errorx",
+  "version": "1.0.0",
+  "description": "SIM Owner Details Tool",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML'",
+    "dev": "python3 -m http.server 3000 || python -m SimpleHTTPServer 3000",
+    "lint": "echo 'No linting configured for static HTML'"
+  },
+  "keywords": ["sim", "details", "errorx"],
+  "author": "Abdullah Suleman",
+  "license": "MIT"
+}
