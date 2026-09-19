@@ -268,7 +268,7 @@ async function search(){
   document.getElementById("result").innerHTML = "";  
   
   try{  
-    let res = await fetch(`${API}?q=${encodeURIComponent(val)}`);  
+    let res = await fetch(`${API}?search=${encodeURIComponent(val)}`);
     let data = await res.json();  
     if(!data.success) throw new Error();  
   
