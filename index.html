@@ -267,32 +267,31 @@ async function search(){
   document.getElementById("loader").style.display = "block";  
   document.getElementById("result").innerHTML = "";  
   
-  try{  
-    let res = await fetch(`${API}?search=${encodeURIComponent(val)}`);
-    let data = await res.json();  
-    if(!data.success) throw new Error();  
-  
-    let html = "";  
-    data.data.records.forEach(r => {  
-      html += `  
-      <div class="item">  
-        <div class="label">Name</div>  
-        <div class="value">${r.full_name||"N/A"}</div>  
-        <div class="label">Phone</div>  
-        <div class="value">${r.phone||"N/A"}</div>  
-        <div class="label">CNIC</div>  
-        <div class="value">${r.cnic||"N/A"}</div>  
-        <div class="label">Address</div>  
-        <div class="value">${r.address||"N/A"}</div>  
-      </div>`;  
-    });  
-    document.getElementById("result").innerHTML = html;  
-  } catch {  
-    document.getElementById("result").innerHTML = "❌ No Data Found";  
-  }  
-  
-  document.getElementById("loader").style.display = "none";  
-}  
+  try{
+
+    let res = await fetch(
+        `${API}?search=${encodeURIComponent(val)}`
+    );
+
+    let text = await res.text();
+
+    document.getElementById("result").innerHTML =
+        `<div class="item">
+            <div class="label">HTTP STATUS</div>
+            <div class="value">${res.status}</div>
+
+            <div class="label">RESPONSE</div>
+            <div class="value">${text}</div>
+        </div>`;
+
+}catch(error){
+
+    document.getElementById("result").innerHTML =
+        `<div class="item">
+            <div class="label">ERROR</div>
+            <div class="value">${error.message}</div>
+        </div>`;
+  } 
   
 // ---- Music Autoplay ----  
 function toggleMusic(){  
